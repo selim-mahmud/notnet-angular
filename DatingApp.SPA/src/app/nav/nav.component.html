@@ -6,15 +6,17 @@
 <div class="top-bar" id="responsive-menu">
   <div class="top-bar-left">
     <ul class="dropdown menu" data-dropdown-menu>
-      <li class="menu-text">DatingApp</li>
-      <li>
-        <a href="#0">Matches</a>
+      <li class="menu-text">
+        <a [routerLink]="['/home']">DatingApp</a>
       </li>
       <li>
-        <a href="#0">Lists</a>
+        <a [routerLink]="['/members']" routerLinkActive="active">Matches</a>
       </li>
       <li>
-        <a href="#0">Messages</a>
+        <a [routerLink]="['/lists']" routerLinkActive="active">Lists</a>
+      </li>
+      <li>
+        <a [routerLink]="['/messages']" routerLinkActive="active">Messages</a>
       </li>
     </ul>
   </div>

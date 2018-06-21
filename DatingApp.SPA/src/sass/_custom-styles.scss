@@ -1,7 +1,16 @@
-a{
-    cursor: pointer;
+a {
+  cursor: pointer;
 }
 
-.container{
-    @include xy-grid-container();
+.dropdown .menu-text {
+  &.menu-text {
+    a {
+      padding: 0;
+      color: $black;
+    }
+  }
+}
+
+.container {
+  @include xy-grid-container();
 }
