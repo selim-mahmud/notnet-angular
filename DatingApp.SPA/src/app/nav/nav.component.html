@@ -7,14 +7,20 @@
   <div class="top-bar-left">
     <ul class="dropdown menu" data-dropdown-menu>
       <li class="menu-text">DatingApp</li>
-      <li><a href="#0">Matches</a></li>
-      <li><a href="#0">Lists</a></li>
-      <li><a href="#0">Messages</a></li>
+      <li>
+        <a href="#0">Matches</a>
+      </li>
+      <li>
+        <a href="#0">Lists</a>
+      </li>
+      <li>
+        <a href="#0">Messages</a>
+      </li>
     </ul>
   </div>
   <div class="top-bar-right">
     <div *ngIf="loggedIn()" class="dropdownbtn" style="float:right;">
-      <button class="dropbtn">Welcome user</button>
+      <button class="dropbtn">Welcome {{authService.decodedToken?.unique_name | titlecase}}</button>
       <div class="dropdown-content">
         <a href="#">Link 1</a>
         <a href="#">Link 2</a>
@@ -23,10 +29,16 @@
     </div>
     <form *ngIf="!loggedIn()" #loginForm="ngForm" (ngSubmit)="login()">
       <ul class="menu">
-          <li><input type="text" placeholder="Username" required name="userName" [(ngModel)]="model.userName"></li>
-          <li><input type="password" placeholder="Password" required name="password" [(ngModel)]="model.password"></li>
-          <li><button type="submit" [disabled]="!loginForm.valid" class="button">Login</button></li>
+        <li>
+          <input type="text" placeholder="Username" required name="userName" [(ngModel)]="model.userName">
+        </li>
+        <li>
+          <input type="password" placeholder="Password" required name="password" [(ngModel)]="model.password">
+        </li>
+        <li>
+          <button type="submit" [disabled]="!loginForm.valid" class="button">Login</button>
+        </li>
       </ul>
-  </form>
+    </form>
   </div>
 </div>

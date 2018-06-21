@@ -19,11 +19,15 @@
       "testTsconfig": "tsconfig.spec.json",
       "prefix": "app",
       "styles": [
+        "../node_modules/alertifyjs/build/css/alertify.min.css",
+        "../node_modules/alertifyjs/build/css/themes/semantic.css",
         "sass/styles.scss"
+        
       ],
       "scripts": [
         "../node_modules/jquery/dist/jquery.min.js",
-        "../node_modules/foundation-sites/dist/js/foundation.min.js"
+        "../node_modules/foundation-sites/dist/js/foundation.min.js",
+        "../node_modules/alertifyjs/build/alertify.min.js"
       ],
       "environmentSource": "environments/environment.ts",
       "environments": {
