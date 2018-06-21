@@ -1,0 +1,10 @@
+@import "~sass/foundation";
+
+.register-content{
+    @include xy-grid();
+
+    .register-form{
+        @include xy-cell(6 of 12);
+    }
+}
+

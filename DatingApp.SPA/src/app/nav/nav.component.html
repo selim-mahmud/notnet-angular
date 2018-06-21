@@ -1,23 +1,32 @@
-<div class="top-bar">
+<div class="title-bar" data-responsive-toggle="responsive-menu" data-hide-for="medium">
+  <button class="menu-icon" type="button" data-toggle="responsive-menu"></button>
+  <div class="title-bar-title">Menu</div>
+</div>
+
+<div class="top-bar" id="responsive-menu">
   <div class="top-bar-left">
     <ul class="dropdown menu" data-dropdown-menu>
-      <li class="menu-text">Site Title</li>
-      <li>
-        <a href="#">One</a>
-        <ul class="menu vertical">
-          <li><a href="#">One</a></li>
-          <li><a href="#">Two</a></li>
-          <li><a href="#">Three</a></li>
-        </ul>
-      </li>
-      <li><a href="#">Two</a></li>
-      <li><a href="#">Three</a></li>
+      <li class="menu-text">DatingApp</li>
+      <li><a href="#0">Matches</a></li>
+      <li><a href="#0">Lists</a></li>
+      <li><a href="#0">Messages</a></li>
     </ul>
   </div>
   <div class="top-bar-right">
-    <ul class="menu">
-      <li><input type="search" placeholder="Search"></li>
-      <li><button type="button" class="button">Search</button></li>
-    </ul>
+    <div *ngIf="loggedIn()" class="dropdownbtn" style="float:right;">
+      <button class="dropbtn">Welcome user</button>
+      <div class="dropdown-content">
+        <a href="#">Link 1</a>
+        <a href="#">Link 2</a>
+        <a (click)="logout()">Logout</a>
+      </div>
+    </div>
+    <form *ngIf="!loggedIn()" #loginForm="ngForm" (ngSubmit)="login()">
+      <ul class="menu">
+          <li><input type="text" placeholder="Username" required name="userName" [(ngModel)]="model.userName"></li>
+          <li><input type="password" placeholder="Password" required name="password" [(ngModel)]="model.password"></li>
+          <li><button type="submit" [disabled]="!loginForm.valid" class="button">Login</button></li>
+      </ul>
+  </form>
   </div>
 </div>

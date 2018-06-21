@@ -1,0 +1,13 @@
+<div class="register-content align-center">
+  <div class="register-form">
+    <h2>Sign up</h2>
+    <form #registerForm="ngForm" (ngSubmit)="register()">
+      <input type="text" required name="userName" placeholder="Username" [(ngModel)]="model.userName">
+      <input type="password" required name="password" placeholder="Password" [(ngModel)]="model.password">
+      <button (click)="register()" class="button primary radius bordered shadow">Register</button>
+      <button (click) = "cancel()" class="button secondary radius bordered shadow">Cancel</button>
+    </form>
+  </div>
+</div>
+
+

@@ -1,3 +1,4 @@
+
 /**
  * Foundation for Sites by ZURB
  * Version 6.4.4-rc1
@@ -138,7 +139,7 @@
   }
 }
 
-@include foundation-everything(true);
+@include foundation-everything($prototype: true);
 
 @import '~motion-ui/motion-ui';
 @include motion-ui-transitions;
