@@ -2,6 +2,11 @@ a {
   cursor: pointer;
 }
 
+p{
+  margin-bottom: rem-calc(10);
+  line-height: 1.2;
+}
+
 .dropdown .menu-text {
   &.menu-text {
     a {

@@ -9,12 +9,15 @@ import { AuthService } from "./services/auth.service";
 import { HomeComponent } from "./home/home.component";
 import { RegisterComponent } from "./register/register.component";
 import { AlertifyService } from "./services/alertify.service";
-import { MemberListComponent } from "./member-list/member-list.component";
+import { MemberListComponent } from "./members/member-list/member-list.component";
 import { ListsComponent } from "./lists/lists.component";
 import { MessagesComponent } from "./messages/messages.component";
 import { RouterModule } from "@angular/router";
 import { appRoutes } from "./routes";
 import { AuthGuard } from "./guards/auth.guard";
+import { UserService } from "./services/user.service";
+import { MemberCardComponent } from "./members/member-card/member-card.component";
+import { MemberDetailComponent } from "./members/member-detail/member-detail.component";
 
 @NgModule({
   declarations: [
@@ -23,6 +26,8 @@ import { AuthGuard } from "./guards/auth.guard";
     HomeComponent,
     RegisterComponent,
     MemberListComponent,
+    MemberCardComponent,
+    MemberDetailComponent,
     ListsComponent,
     MessagesComponent
   ],
@@ -32,7 +37,7 @@ import { AuthGuard } from "./guards/auth.guard";
     FormsModule,
     RouterModule.forRoot(appRoutes)
   ],
-  providers: [AuthService, AlertifyService, AuthGuard],
+  providers: [AuthService, AlertifyService, AuthGuard, UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

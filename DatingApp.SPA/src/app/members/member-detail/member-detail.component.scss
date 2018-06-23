@@ -1,0 +1,26 @@
+@import "~sass/foundation";
+
+.member-detail-content{
+    @include xy-grid;
+
+    h2{
+        @include xy-cell();
+    }
+    .profile-summery{
+        img{
+            width: 100%;
+        }
+
+        @include xy-cell();
+        @include breakpoint(medium){
+            @include xy-cell(4 of 12);
+        }
+    }
+
+    .profile-detail{
+        @include xy-cell();
+        @include breakpoint(medium){
+            @include xy-cell(8 of 12);
+        }
+    }
+}

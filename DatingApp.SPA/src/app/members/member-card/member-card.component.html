@@ -1,0 +1,18 @@
+<div class="card">
+  <div class="card-section card-section-top">
+    <img src="{{user.photoUrl}}" alt="{{user.knownAs}}">
+    <div class="button-group card-button-detailed">
+        <a class="primary button tiny" [routerLink]="['/members/', user.id]" routerLinkActive="router-link-active" ><i class="fa fa-user"></i></a>
+        <a class="primary button tiny"><i class="fa fa-heart"></i></a>
+        <a class="primary button tiny"><i class="fa fa-envelope"></i></a>
+      </div>
+  </div>
+  <div class="card-section card-section-bottom">
+    <div class="text-center">
+      <p><strong><i class="fa fa-user"></i> {{user.knownAs}}, {{user.age}}</strong></p>
+    </div>
+    <div class="text-center">
+      <p>{{user.city}}</p>
+    </div>
+  </div>
+</div>

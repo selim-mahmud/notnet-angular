@@ -1,0 +1,17 @@
+@import "~sass/foundation";
+
+.member-list-content{
+    @include xy-grid();
+
+    .member-item{
+        @include xy-cell(6 of 12);
+
+        @include breakpoint(medium) {
+            @include xy-cell(3 of 12);
+         }
+
+        @include breakpoint(large) {
+            @include xy-cell(2 of 12);
+         }
+    }
+}

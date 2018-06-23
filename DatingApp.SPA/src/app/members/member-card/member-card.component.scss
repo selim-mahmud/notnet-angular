@@ -1,0 +1,40 @@
+@import "~sass/foundation";
+
+.card-section-top {
+    position: relative;
+    overflow: hidden;
+    img{
+        width: 100%;
+        transform: scale(1, 1);
+        transition-duration: 500ms;
+        transition-timing-function: ease-out;
+        opacity: 1;
+    }
+
+    &:hover{
+        img{
+            transform: scale(1.5, 1.5);
+            opacity: .7;
+        }
+    }
+
+    .card-button-detailed{
+        position: absolute;
+        bottom: -30%;
+        left: 50%;
+        -webkit-transform: translateX(-50%);
+        transform: translateX(-50%);
+        opacity: 0;
+        transition: all .3s ease-in-out;
+
+        a{
+            padding: 5px 10px;
+        }
+    }
+
+    &:hover .card-button-detailed{
+        bottom: 0;
+        opacity: 1;
+    }
+    
+  }
