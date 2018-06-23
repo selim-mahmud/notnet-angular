@@ -26,6 +26,11 @@ export class UserService {
     .catch(this.handleError);
   }
 
+  updateUser(id: number, user: User){
+    return this.httpClient.put(this.baseUrl + 'users/' + id, user, this.getRequestOptions()).catch(this.handleError)
+
+  }
+
   private getRequestOptions() {
     let token = localStorage.getItem("token");
     return {
