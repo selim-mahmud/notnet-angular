@@ -2,6 +2,7 @@ import { BrowserModule } from "@angular/platform-browser";
 import { NgModule } from "@angular/core";
 import { HttpClientModule } from "@angular/common/http";
 import { FormsModule } from "@angular/forms";
+import { NgxGalleryModule } from 'ngx-gallery';
 
 import { AppComponent } from "./app.component";
 import { NavComponent } from "./nav/nav.component";
@@ -18,6 +19,8 @@ import { AuthGuard } from "./guards/auth.guard";
 import { UserService } from "./services/user.service";
 import { MemberCardComponent } from "./members/member-card/member-card.component";
 import { MemberDetailComponent } from "./members/member-detail/member-detail.component";
+import { MemberDetailResolver } from "./resolvers/member-detail.resolver";
+import { MemberListResolver } from "./resolvers/member-list.resolver";
 
 @NgModule({
   declarations: [
@@ -35,9 +38,17 @@ import { MemberDetailComponent } from "./members/member-detail/member-detail.com
     BrowserModule,
     HttpClientModule,
     FormsModule,
-    RouterModule.forRoot(appRoutes)
+    RouterModule.forRoot(appRoutes),
+    NgxGalleryModule,
   ],
-  providers: [AuthService, AlertifyService, AuthGuard, UserService],
+  providers: [
+    AuthService, 
+    AlertifyService, 
+    AuthGuard, 
+    UserService, 
+    MemberDetailResolver,
+    MemberListResolver
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

@@ -1,22 +1,26 @@
 <div class="member-detail-content">
-  <h2>{{user?.knownAs}}'s profile</h2>
+  <h2>{{user.knownAs}}'s profile</h2>
   <div class="profile-summery">
       <div class="card">
           <div class="card-section">
-            <img src="{{user?.photoUrl}}" alt="{{user?.knownAs}}">
+            <img src="{{user.photoUrl}}" alt="{{user.knownAs}}">
           </div>
           <div class="card-section">
             <span><strong>Location:</strong></span>
-            <p>{{user?.city}}, {{user?.country}}</p>
+            <p>{{user.city}}, {{user.country}}</p>
 
             <span><strong>Age:</strong></span>
-            <p>{{user?.age}}</p>
+            <p>{{user.age}}</p>
 
             <span><strong>Last active:</strong></span>
-            <p>{{user?.lastActive}}</p>
+            <p>{{user.lastActive}}</p>
 
             <span><strong>Member since:</strong></span>
-            <p>{{user?.created}}</p>
+            <p>{{user.created}}</p>
+            <div class="button-group">
+                <a class="success button">Like</a>
+                <a class="secondary button">Message</a>
+              </div>
           </div>
         </div>
   </div>
@@ -24,25 +28,25 @@
   <div class="profile-detail">
       <ul class="accordion" data-responsive-accordion-tabs="tabs small-accordion medium-accordion large-tabs">
           <li class="accordion-item is-active" data-accordion-item>
-            <a href="#" class="accordion-title">About {{user?.knownAs}}</a>
+            <a href="#" class="accordion-title">About {{user.knownAs}}</a>
             <div class="accordion-content" data-tab-content>
               <h4>Description:</h4>
-              <p>{{user?.introduction}}</p>
+              <p>{{user.introduction}}</p>
               <h4>Looking for:</h4>
-              <p>{{user?.lookingFor}}</p>
+              <p>{{user.lookingFor}}</p>
             </div>
           </li>
           <li class="accordion-item" data-accordion-item>
             <a href="#" class="accordion-title">Intererst</a>
             <div class="accordion-content" data-tab-content>
               <h4>Description</h4>
-              <p>{{user?.interests}}</p>
+              <p>{{user.interests}}</p>
             </div>
           </li>
           <li class="accordion-item" data-accordion-item>
               <a href="#" class="accordion-title">Photos</a>
               <div class="accordion-content" data-tab-content>
-                <p>Photos will go here.</p>
+                  <ngx-gallery [options]="galleryOptions" [images]="galleryImages"></ngx-gallery>
               </div>
           </li>
           <li class="accordion-item" data-accordion-item>
